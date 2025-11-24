@@ -1,0 +1,8 @@
+{
+    "executed_at": "2025-11-24T16:29:14.899449+00:00",
+    "input_file": "transactions_50k.jsonl",
+    "trx_status": "approved",
+    "input_record_count": 50000,
+    "output_record_count": 21529,
+    "output_file": "gld_trxs_approved_view.parquet"
+}

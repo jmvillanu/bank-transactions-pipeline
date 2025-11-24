@@ -61,8 +61,9 @@ def main(input_filename: str, trx_status: str, payment_method_type_col_nested: s
     view_df.columns = view_df.columns.str.replace('extra_', '', regex=False)
     
     view_df["audit_input_file"] = input_filename
+    file_preffix = f"gld_trxs_{trx_status}_view"
     
-    output_path = ROOT_DIR / "data" / "output" / f"view_{trx_status}_trxs.parquet"
+    output_path = ROOT_DIR / "data" / "output" / f"{file_preffix}.parquet"
     view_df = view_df.sort_values(["bin", "trx_date"]).reset_index(drop=True)
     view_df.to_parquet(output_path, index=False)
 
@@ -75,7 +76,7 @@ def main(input_filename: str, trx_status: str, payment_method_type_col_nested: s
         "output_file"               : output_path.name,
     }
 
-    meta_path = ROOT_DIR / "data" / "output" / f"view_{trx_status}_trxs.meta.json"
+    meta_path = ROOT_DIR / "data" / "output" / f"{file_preffix}.meta.json"
     with open(meta_path, "w") as f:
         json.dump(audit_data, f, indent=4)
     
