@@ -1,0 +1,9 @@
+# macOS files
+.DS_Store
+
+# virtual environments
+.venv
+venv
+
+# data files
+data/input/*.jsonl
