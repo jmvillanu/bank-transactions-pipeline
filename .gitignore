@@ -1,0 +1,14 @@
+# macOS-generated files
+.DS_Store
+
+# virtual environments
+.venv
+venv
+
+# logs
+logs/*
+
+# data files
+data/input/*
+!data/input/.gitkeep
+!data/output/.gitkeep
